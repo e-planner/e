@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- HELLO DEAR INSPECTOR -->
+  <!-- I AM THE CREATOR OF THIS PROGRAM, Tata Li (李奥) -->
+  <!-- If you have any questions or suggestions, contact me via just4spam123@outlook.com -->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings</title>
+    <link rel="icon" href="./favicon.png"  type="image/x-icon">
+    <style>
+
+    .borderRI
+    {
+      border-radius: 15px;
+      background-color: white;
+      border-color: black;
+      border-width: 1.2px;
+        padding: 10px 60px;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+      width: 140px;
+    }
+
+    a, h3, h2, h1, h4, h5, h6, div, p, button, input{
+      font-family: avenir;
+    }
+
+    .buttonR
+      {
+        border-radius: 15px;
+        background-color: white;
+        border-color: black;
+        border-width: 1px;
+        padding: 8px 15px;
+        width: 215px;
+        height: 40px;
+      }
+
+    .buttonRC
+      {
+        border-radius: 15px;
+        background-color: white;
+        border-color: black;
+        border-width: 1px;
+        padding: 8px 15px;
+        width: 215px;
+        height: 40px;
+        cursor: pointer;
+      }
+
+      .buttonRC:hover{
+        background-color: white;
+        color: black;
+        box-shadow: 1px 2px 10px 2px rgba(0,0,0,0.2);
+      }
+
+      .buttonSubClose
+      {
+        background-color: white;
+        border-color: white;
+        border-width: 0px;
+        /*padding: 8px 15px;*/
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        color: white;
+        font-family: times;
+        position: relative;
+        top: 2.5px;
+        font-size: 30px;
+        vertical-align: center;
+      }
+
+      .buttonSubClose:hover{
+        color: #fa0505;
+      }
+
+      .buttonBar:hover{
+        background-color: 80%;
+      }
+      
+      .colorpicker
+      {
+        height: 41px;
+        position: relative;
+        top: 10px;
+        border-radius: 0px
+        cursor: pointer;
+      }
+    
+      .rectangle {
+        height: 5000px;
+        width: 25%;
+        opacity: 0;
+        border-radius: 40px;
+      }
+
+      .funrectangle {
+        background-color: #FAF0FF;
+        border-color: #FDF9FF;
+        border-style: initial;
+        border-width: 2px;
+        height: 10000px;
+        width: 360px;
+        border-radius: 40px;
+        z-index: -1;
+        position: absolute;
+          top: -230px;
+          left: 50px;
+      }
+
+    </style>
+
+  </head>
+
+
+  <body style="background-color: white;" onload="Load()">
+
+    <div style="float:left; width: 350px; position: absolute; left: 80px">
+
+      <br/>  
+      <h1>Attributes</h1>
+
+
+      <button class="buttonRC" onclick="ModTheme()"><b><big>Theme</big></b></button>
+
+      <br/><br/>
+      <button class="buttonRC" onclick="ModSubjects()"><b><big>Subjects</big></b></button>
+
+      <br/><br/>
+      <a href="planner.html"><button class="buttonRC"><b><big>Back</big></b></button></a>
+
+      <br/><br/>
+      <a href="planner.html"><button class="buttonRC" onclick="Erase()" style="color:#db0000"><b><big>Reset Planner</big></b></button></a>
+
+      <br/>
+      <div class="rectangle" style="height: 4000px;"></div>
+      <div class="rectangle"></div><br/><br/><br/><br/><br/>
+      <p style="font-family: times;">Copyright © 2022-3022 Tata Li</p>
+    </div>
+
+    <div style="position: absolute; left: 400px; width: 1040px">
+
+
+      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0906.1630</u></small></p><br/>
+
+      <h1> Settings</h1>
+      <div id="content"></div>
+
+      <script>
+
+        function PopInfo(){
+          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0906.1630\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 6, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
+          alert("========INSTRUCTIONS=======\n> Use the side panel to choose an attribute that you want to edit\n\n========UPDATES=======\n> None\n\n")
+        }
+
+        let customsubjects
+        let customcolors
+        let themebarcolor
+        let defaultthemebarcolor = "#FAF0FF"
+        const defaultsubjects = ['Science','Math','English','Chinese','Humanities','I&S','Design','Art','Drama','Music','Wushu','Dance','PE','Wellbeing']
+        const defaultcolors = ['CDF6C0','F5F8C3','F7B79B','C0CAF6','C0E9F6','C0E9F6','FAB4F6','F6C0C4','F6C0C4','F6C0C4','F6C0C4','F6C0C4','B8FFF8','CEDE40']
+        let content = document.getElementById("content")
+
+        function scrollToTop(){
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function Clear(){
+          content.innerHTML = ""
+        }
+
+        function ModSubjects(){
+          content.innerHTML = ""
+          let thelist = document.createElement("div")
+          thelist.id = "thelist"
+          content.appendChild(thelist)
+          const subTemplate="<div id='thing∂iπ'><input id='subject∂iπ' placeholder='Subject Name' class='borderRI' maxlength='20' style='border-right-width:0px; border-top-right-radius:0px; border-bottom-right-radius:0px;'><input id='color∂iπ' type='color' class='colorpicker'/><button id='close∂iπ' onclick='SubClose(∂iπ)' class='buttonSubClose'>×</button><br/></div>"
+
+          let combinedtemplate=""
+          let newtemplate
+          for (var i=0;i<25;i+=1){
+            newtemplate = subTemplate.replace(/∂iπ/g,String(i))
+            combinedtemplate=combinedtemplate+newtemplate
+          }
+          thelist.innerHTML = combinedtemplate;
+
+          const tempend = "<br/><button class='buttonRC' style='width:210px' onclick='SubUpdate()'><big><b>Update</b></big></button><br/><br/><button class='buttonRC' style='width:210px' onclick='SubRestoreDefault()'><big><b>Restore Default</b></big></button>"
+          let theend = document.createElement("div")
+          theend.id = "theend"
+          content.appendChild(theend)
+          theend.innerHTML = tempend
+
+          for (var i=0;i<25;i+=1){
+            if (i<customsubjects.length){
+              document.getElementById("subject"+String(i)).value = customsubjects[i]
+              document.getElementById("color"+String(i)).value = "#"+customcolors[i]
+            } else {
+              document.getElementById("color"+String(i)).value = "#FFFFFF"
+            }
+            
+          }
+        }
+
+        function SubClose(id){
+          document.getElementById("subject"+id).value="";
+          document.getElementById("color"+id).value="#FFFFFF";
+        }
+
+        function SubUpdate(){
+          customsubjects=[]
+          customcolors=[]
+          for (var i=0;i<25;i+=1){
+            if (document.getElementById("subject"+String(i)).value!=""){
+              customsubjects.push(document.getElementById("subject"+String(i)).value)
+              customcolors.push(document.getElementById("color"+String(i)).value.substring(1,7))
+            }
+          }
+          console.log(customsubjects)
+          console.log(customcolors)
+
+          localStorage.setItem("customsubjects",customsubjects)
+          localStorage.setItem("customcolors",customcolors)
+          Clear()
+          scrollToTop()
+         }
+
+        function SubRestoreDefault(){
+          customsubjects = defaultsubjects
+          customcolors = defaultcolors
+          console.log(customsubjects)
+          console.log(customcolors)
+          ModSubjects()
+          localStorage.setItem("customsubjects",customsubjects)
+          localStorage.setItem("customcolors",customcolors)
+          Clear()
+          scrollToTop()
+        }
+
+        function Load(){
+          if (localStorage.getItem("customsubjects") == null){
+            customsubjects = defaultsubjects
+            customcolors = defaultcolors
+            console.log("customsubjects is null")
+          } else {
+            customsubjects = localStorage.getItem("customsubjects").split(",")
+            customcolors = localStorage.getItem("customcolors").split(",")
+          }
+
+          if (localStorage.getItem("themebarcolor") == null){
+            themebarcolor = defaultthemebarcolor
+            console.log("themebarcolor is null")
+          } else {
+            themebarcolor = localStorage.getItem("themebarcolor")
+            document.getElementById("funrectangle").setAttribute("style","width: 300px; position: absolute; left: 40px; background-color: "+themebarcolor+";")
+          }
+          console.log(customcolors)
+          console.log(themebarcolor)
+        }
+
+        function ModTheme(){
+          content.innerHTML="<div id='barcolorthing'><button id='barcolorinput' class='buttonR' style='; width: 180px; text-align: left;'><big> Side Panel Color</big></button><input id='barcolor' type='color' class='colorpicker' style='top:10px; left: -20px'/><br/></div><br/><button class='buttonRC' style='width:210px' onclick='ThemeUpdate()'><big><b>Update</b></big></button><br/><br/><button class='buttonRC' style='width:210px' onclick='ThemeRestoreDefault()'><big><b>Restore Default</b></big></button>"
+          document.getElementById("barcolor").value=themebarcolor
+          document.getElementById("funrectangle").setAttribute("style","width: 300px; position: absolute; left: 40px; background-color: "+themebarcolor+";")
+        }
+
+        function ThemeUpdate(){
+          themebarcolor = document.getElementById("barcolor").value
+          console.log(themebarcolor)
+          localStorage.setItem("themebarcolor",themebarcolor)
+          document.getElementById("funrectangle").setAttribute("style","width: 300px; position: absolute; left: 40px; background-color: "+themebarcolor+";")
+
+          Clear()
+          scrollToTop()
+         }
+
+        function ThemeRestoreDefault(){
+          themebarcolor = defaultthemebarcolor
+          ModTheme()
+          localStorage.setItem("themebarcolor",themebarcolor)
+          Clear()
+          scrollToTop()
+        }
+
+        function Erase(){          
+          localStorage.removeItem("storedItem")
+          localStorage.removeItem("storedItem2")
+          localStorage.removeItem("customsubjects")
+          localStorage.removeItem("customcolors")
+          localStorage.removeItem("themebarcolor")
+          document.getElementById("content").innerHTML = ""
+          alert("Planner has been reset")
+        }
+      </script>
+
+    </div>
+
+    <div class="funrectangle" id="funrectangle" style="width: 300px; position: absolute; left: 40px; background-color: #FAF0FF;"></div>
+
+
+
+    <div>
+      
+      <h1 id='dateDisplay' style="font-weight: lighter; position: absolute; top: 30px; left:800px; color: grey"><small><small>IDK 00 - 00:00</small></small></h1>
+
+      <script>
+        UpdateTime();
+
+        setInterval(function(){UpdateTime()}, 10000);
+
+        function UpdateTime(){
+          let text = document.getElementById("dateDisplay");
+          let date = new Date();
+          let newDate = JSON.stringify(date);
+          let month = newDate.slice(6,8);
+          let day = newDate.slice(9,11);
+          let time = newDate.slice(12,17);
+          let newHour = String(parseInt(time.slice(0,2)) + 8);
+          if (newHour > 23.5){
+            newHour = String(parseInt(newHour) - 24);
+          }
+          let newNoHour = time.slice(2,6);
+          let newTime = newHour + newNoHour;
+          let week = newDate.slice(11,12);
+          let newMonth;
+
+          month = parseInt(month)
+          const monthslist = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+          newMonth = monthslist[month-1]
+
+          if (day[1] == "1" && day!="11"){
+            newDaySup = "<sup>st</sup>";
+          } else if (day[1] == "2" && day!="12"){
+            newDaySup = "<sup>nd</sup>";
+          } else if (day[1] == "3" && day!="13"){
+            newDaySup = "<sup>rd</sup>";
+          } else {
+            newDaySup = "<sup>th</sup>";
+          }
+
+          text.innerHTML = "<small><small>" + newMonth + "&nbsp" + day + newDaySup + "&nbsp-&nbsp" + newTime + "</small></small>";
+        }
+      </script>
+
+    </div>
+
+  </body>
+</html>
