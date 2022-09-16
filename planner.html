@@ -173,7 +173,7 @@
       
       <br/>
       <br/>
-
+      <!--
       <button type="button" class="buttonR" id="subjectButton" style="width:80px; height: 40px; text-align: left; border-top-right-radius: 0px;border-bottom-right-radius: 0px;">Language</button>
       <button type="button" class="buttonR" style="height: 40px; width:140px; text-align: left; border-top-left-radius: 0px;border-bottom-left-radius: 0px; position: relative; right: 10px; bottom: -0.5px; border-left-width:0px">
       <form>
@@ -186,7 +186,7 @@
       </button>
 
       <br/>
-      <br/>
+      <br/>-->
 
       <input class="borderRI" placeholder="Task" id="task" maxlength="40" /><br/><br/>
       <input type="date" class="borderRI" id="date" placeholder="Date (yyyy-mm-dd)" minlength="10"/><br/><br/>
@@ -240,7 +240,7 @@
           document.getElementById("date").value = "";
           document.getElementById("tag").value = "None";
           document.getElementById("subject").value = "";
-          document.getElementById("language").value = ""
+          //document.getElementById("language").value = ""
         }
 
         function Create()
@@ -248,12 +248,13 @@
           tasksList = document.getElementById("tasks");
           let subjectRaw = document.getElementById("subject").value;
           let tagVal = document.getElementById("tag").value;
-          let langVal = document.getElementById("language").value;
+          //let langVal = document.getElementById("language").value;
 
           if (subjectRaw=="InS"){
             subjectRaw = "I&S"
           }
-          let subject = "<big><b>"+ subjectRaw +langVal+"</b></big>";
+          //let subject = "<big><b>"+ subjectRaw +langVal+"</b></big>";
+          let subject = "<big><b>"+ subjectRaw +"</b></big>";
           let task = "<big>" + document.getElementById("task").value + "</big>";
 
           let dateStr = (document.getElementById("date").value);
@@ -325,7 +326,7 @@
           thing.appendChild(newTag)
         }
 
-        document.addEventListener('contextmenu', event => event.preventDefault());
+        //document.addEventListener('contextmenu', event => event.preventDefault());
         function Pin(id){
           //alert('im right clicked');
           let date = document.getElementById(String(id)+"1");
@@ -423,15 +424,15 @@
               var contentpart = taskpart.substring(i+7, taskpart.length-7);
               hasSubject = true;
 
-              if (subjectpart.indexOf("CH") != -1){
-                var subjectpart = subjectpart.substring(0, subjectpart.indexOf("CH")-6)
-                var langpart = "&nbspCH"
-              } else if (subjectpart.indexOf("EN") != -1){
-                var subjectpart = subjectpart.substring(0, subjectpart.indexOf("EN")-6)
-                var langpart = "&nbspEN"
-              } else {
-                var langpart = ""
-              }
+              // if (subjectpart.indexOf("CH") != -1){
+              //   var subjectpart = subjectpart.substring(0, subjectpart.indexOf("CH")-6)
+              //   var langpart = "&nbspCH"
+              // } else if (subjectpart.indexOf("EN") != -1){
+              //   var subjectpart = subjectpart.substring(0, subjectpart.indexOf("EN")-6)
+              //   var langpart = "&nbspEN"
+              // } else {
+              //   var langpart = ""
+              // }
               console.log(subjectpart)
               if (subjectpart == "I&amp;S"){
                 subjectpart="InS"
@@ -455,7 +456,7 @@
           document.getElementById("task").value = contentpart;
           document.getElementById("subject").value = subjectpart;
           document.getElementById("date").value = datepart;
-          document.getElementById("language").value = langpart;
+          //document.getElementById("language").value = langpart;
 
           thing.removeChild(item);
           thing.removeChild(date);
@@ -482,7 +483,7 @@
     <div style="position: absolute; left: 400px; width: 1040px">
 
 
-      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0906.1630</u></small></p><br/>
+      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0916.2230</u></small></p><br/>
 
       <h1> Digital Planner </h1>
       <div id="tasks"></div>
@@ -496,7 +497,7 @@
         let storedItem2 = localStorage.getItem("idList");
 
         function PopInfo(){
-          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0906.1630\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 6, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
+          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0916.2230\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 16, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
           alert("========INSTRUCTIONS=======\n\nSIDE PANEL (LEFT)\n> Use the side panel to set attributes of a new task\n> Click \"ADD NEW TASK\" to add a new task\n> Click \"CLEAR FORM\" to erase your input in the purple bar\n> CLICK \"SETTINGS\" to customize or RESET the planner\nRIGHT\n> Click the date part of the task to PIN\n> Click the rest to DELETE or EDIT\n> Click the VERSION NUMBER to show info message\n\n========UPDATES=======\n> Settings Page\n> Bug fixes\n\n")
         }
 
@@ -590,8 +591,8 @@
     </div>
 
     <div>
-
-      <img src="schedule3.png" alt="i'm confused" id="scheduleImage" style="width: 820px; opacity: 0; z-index: -750; position: absolute; left: -1000px; top: 5000px;"/>
+      <!--
+      <img src="schedule3.png" alt="i'm confused" id="scheduleImage" style="width: 820px; opacity: 0; z-index: -750; position: absolute; left: -1000px; top: 5000px;"/>-->
 
       <script>
 
