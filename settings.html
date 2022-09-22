@@ -43,15 +43,16 @@
     <div style="position: absolute; left: 400px; width: 800px">
 
 
-      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0922.2025</u></small></p><br/>
+      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0922.2040</u></small></p><br/>
 
       <h1> Settings</h1>
       <div id="content"></div>
 
       <script>
 
+        //document.addEventListener('contextmenu', event => event.preventDefault());
         function PopInfo(){
-          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0922.0225\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 22, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
+          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0922.2040\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 22, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
           alert("========INSTRUCTIONS=======\n> Use the side panel to choose an attribute that you want to edit\n\n========UPDATES=======\n> None\n\n")
         }
 
@@ -151,14 +152,14 @@
           }
 
           if (localStorage.getItem("themefont") == null){
-            themefont = "avenir"
-            document.getElementById('stylesheet').setAttribute("href","style-avenir.css")
+            themefont = "georgia"
+            document.getElementById('stylesheet').setAttribute("href","style-georgia.css")
           } else {
             themefont = localStorage.getItem("themefont")
-            if (themefont == "georgia"){
-              document.getElementById('stylesheet').setAttribute("href","style-georgia.css")            
+            if (themefont == "avenir"){
+              document.getElementById('stylesheet').setAttribute("href","style-avenir.css")            
             } else {
-              document.getElementById('stylesheet').setAttribute("href","style-avenir.css")
+              document.getElementById('stylesheet').setAttribute("href","style-georgia.css")
             }
           }
 
