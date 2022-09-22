@@ -1,0 +1,156 @@
+.borderRI
+{
+  border-radius: 15px;
+  background-color: white;
+  border-color: black;
+  border-width: 1.2px;
+  padding: 10px 60px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  width: 193px;
+}
+
+a, h3, h2, h1, h4, h5, h6, div, p, button, input{
+  font-family: avenir;
+}
+
+.home{
+  background-color: white;
+}
+
+.buttonR
+  {
+  border-radius: 15px;
+  background-color: white;
+  border-color: black;
+  border-width: 1px;
+  padding: 8px 15px;
+  width: 215px;
+  height: 40px;
+}
+
+.buttonRC{
+  border-radius: 15px;
+  background-color: white;
+  border-color: black;
+  border-width: 1px;
+  padding: 8px 15px;
+  width: 215px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.buttonBar{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: white;
+  border-color: black;
+  border-width: 1px;
+  padding: 8px 15px;
+  height:60px;
+  width:500px;
+  text-align:left;
+}
+
+.buttonBar:hover{
+  background-color: 80%;
+}
+
+.calendar{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: white;
+  border-color: black;
+  border-width: 1px;
+  border-left-width: 0px;
+  padding: 8px 15px;
+  position: relative;
+  bottom: -4.5px;
+  height:60px;
+  width:60px;
+  text-align:center;
+  font-weight: bold;
+  font-size: 30px;
+  cursor:pointer;
+}
+
+.buttonRC:hover{
+  background-color: white;
+  color: black;
+  box-shadow: 1px 2px 10px 2px rgba(0,0,0,0.2);
+}
+
+.buttonSubClose{
+  background-color: white;
+  border-color: white;
+  border-width: 0px;
+  /*padding: 8px 15px;*/
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  color: white;
+  font-family: times;
+  position: relative;
+  top: 2.5px;
+  font-size: 30px;
+  vertical-align: center;
+}
+
+.buttonSubClose:hover{
+  color: #fa0505;
+}
+
+.buttonBar:hover{
+  background-color: 80%;
+}
+      
+.colorpicker{
+  height: 41px;
+  position: relative;
+  top: 10px;
+  border-radius: 0px
+  cursor: pointer;
+}
+    
+.rectangle{
+  height: 5000px;
+  width: 25%;
+  opacity: 0;
+  border-radius: 40px;
+}
+
+.funrectangle{
+  background-color: #FAF0FF;
+  border-color: #FDF9FF;
+  border-style: initial;
+  border-width: 2px;
+  height: 10000px;
+  width: 360px;
+  border-radius: 40px;
+  z-index: -1;
+  position: absolute;
+    top: -230px;
+    left: 50px;
+}
+
+.inputSC{
+  border-radius: 15px;
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+  background-color: white;
+  border-color: black;
+  border-width: 1.2px;
+    border-right-width:0px;
+  padding: 10px 60px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  width: 140px;
+}

@@ -11,116 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Settings</title>
     <link rel="icon" href="./favicon.png"  type="image/x-icon">
-    <style>
-
-    .borderRI
-    {
-      border-radius: 15px;
-      background-color: white;
-      border-color: black;
-      border-width: 1.2px;
-        padding: 10px 60px;
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        padding-left: 10px;
-      width: 140px;
-    }
-
-    a, h3, h2, h1, h4, h5, h6, div, p, button, input{
-      font-family: avenir;
-    }
-
-    .buttonR
-      {
-        border-radius: 15px;
-        background-color: white;
-        border-color: black;
-        border-width: 1px;
-        padding: 8px 15px;
-        width: 215px;
-        height: 40px;
-      }
-
-    .buttonRC
-      {
-        border-radius: 15px;
-        background-color: white;
-        border-color: black;
-        border-width: 1px;
-        padding: 8px 15px;
-        width: 215px;
-        height: 40px;
-        cursor: pointer;
-      }
-
-      .buttonRC:hover{
-        background-color: white;
-        color: black;
-        box-shadow: 1px 2px 10px 2px rgba(0,0,0,0.2);
-      }
-
-      .buttonSubClose
-      {
-        background-color: white;
-        border-color: white;
-        border-width: 0px;
-        /*padding: 8px 15px;*/
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        color: white;
-        font-family: times;
-        position: relative;
-        top: 2.5px;
-        font-size: 30px;
-        vertical-align: center;
-      }
-
-      .buttonSubClose:hover{
-        color: #fa0505;
-      }
-
-      .buttonBar:hover{
-        background-color: 80%;
-      }
-      
-      .colorpicker
-      {
-        height: 41px;
-        position: relative;
-        top: 10px;
-        border-radius: 0px
-        cursor: pointer;
-      }
-    
-      .rectangle {
-        height: 5000px;
-        width: 25%;
-        opacity: 0;
-        border-radius: 40px;
-      }
-
-      .funrectangle {
-        background-color: #FAF0FF;
-        border-color: #FDF9FF;
-        border-style: initial;
-        border-width: 2px;
-        height: 10000px;
-        width: 360px;
-        border-radius: 40px;
-        z-index: -1;
-        position: absolute;
-          top: -230px;
-          left: 50px;
-      }
-
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="style-avenir.css" id="stylesheet"/>
   </head>
 
 
-  <body style="background-color: white;" onload="Load()">
+  <body onload="Load()" id="body" class="body">
 
     <div style="float:left; width: 350px; position: absolute; left: 80px">
 
@@ -145,10 +40,10 @@
       <p style="font-family: times;">Copyright © 2022-3022 Tata Li</p>
     </div>
 
-    <div style="position: absolute; left: 400px; width: 1040px">
+    <div style="position: absolute; left: 400px; width: 800px">
 
 
-      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0906.1630</u></small></p><br/>
+      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0922.2025</u></small></p><br/>
 
       <h1> Settings</h1>
       <div id="content"></div>
@@ -156,13 +51,15 @@
       <script>
 
         function PopInfo(){
-          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0906.1630\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 6, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
+          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0922.0225\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 22, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
           alert("========INSTRUCTIONS=======\n> Use the side panel to choose an attribute that you want to edit\n\n========UPDATES=======\n> None\n\n")
         }
 
+        let themefont
         let customsubjects
         let customcolors
         let themebarcolor
+        let themebgcolor
         let defaultthemebarcolor = "#FAF0FF"
         const defaultsubjects = ['Science','Math','English','Chinese','Humanities','I&S','Design','Art','Drama','Music','Wushu','Dance','PE','Wellbeing']
         const defaultcolors = ['CDF6C0','F5F8C3','F7B79B','C0CAF6','C0E9F6','C0E9F6','FAB4F6','F6C0C4','F6C0C4','F6C0C4','F6C0C4','F6C0C4','B8FFF8','CEDE40']
@@ -181,7 +78,7 @@
           let thelist = document.createElement("div")
           thelist.id = "thelist"
           content.appendChild(thelist)
-          const subTemplate="<div id='thing∂iπ'><input id='subject∂iπ' placeholder='Subject Name' class='borderRI' maxlength='20' style='border-right-width:0px; border-top-right-radius:0px; border-bottom-right-radius:0px;'><input id='color∂iπ' type='color' class='colorpicker'/><button id='close∂iπ' onclick='SubClose(∂iπ)' class='buttonSubClose'>×</button><br/></div>"
+          const subTemplate="<div id='thing∂iπ'><input id='subject∂iπ' placeholder='Subject Name' class='inputSC' maxlength='20'><input id='color∂iπ' type='color' class='colorpicker'/><button id='close∂iπ' onclick='SubClose(∂iπ)' class='buttonSubClose'>×</button><br/></div>"
 
           let combinedtemplate=""
           let newtemplate
@@ -253,6 +150,18 @@
             customcolors = localStorage.getItem("customcolors").split(",")
           }
 
+          if (localStorage.getItem("themefont") == null){
+            themefont = "avenir"
+            document.getElementById('stylesheet').setAttribute("href","style-avenir.css")
+          } else {
+            themefont = localStorage.getItem("themefont")
+            if (themefont == "georgia"){
+              document.getElementById('stylesheet').setAttribute("href","style-georgia.css")            
+            } else {
+              document.getElementById('stylesheet').setAttribute("href","style-avenir.css")
+            }
+          }
+
           if (localStorage.getItem("themebarcolor") == null){
             themebarcolor = defaultthemebarcolor
             console.log("themebarcolor is null")
@@ -260,30 +169,60 @@
             themebarcolor = localStorage.getItem("themebarcolor")
             document.getElementById("funrectangle").setAttribute("style","width: 300px; position: absolute; left: 40px; background-color: "+themebarcolor+";")
           }
+
+          if (localStorage.getItem("themebgcolor") == null){
+            themebgcolor = "#FFFFFF"
+            localStorage.setItem("themebgcolor",themebgcolor)
+          } else {
+            themebgcolor = localStorage.getItem("themebgcolor")
+            document.getElementById("body").setAttribute("style","background-color: "+themebgcolor+";")
+          }
+
           console.log(customcolors)
           console.log(themebarcolor)
         }
 
         function ModTheme(){
-          content.innerHTML="<div id='barcolorthing'><button id='barcolorinput' class='buttonR' style='; width: 180px; text-align: left;'><big> Side Panel Color</big></button><input id='barcolor' type='color' class='colorpicker' style='top:10px; left: -20px'/><br/></div><br/><button class='buttonRC' style='width:210px' onclick='ThemeUpdate()'><big><b>Update</b></big></button><br/><br/><button class='buttonRC' style='width:210px' onclick='ThemeRestoreDefault()'><big><b>Restore Default</b></big></button>"
+          content.innerHTML="<div id='barcolorthing'><button id='barcolorinput' class='buttonR' style='; width: 180px; text-align: left;'><big> Side Panel Color</big></button><input id='barcolor' type='color' class='colorpicker' style='top:10px; left: -20px'/><br/></div><div style='height:5px'></div>   <div id='bgcolorthing'><button id='bgcolorinput' class='buttonR' style='; width: 180px; text-align: left;'><big> Background Color</big></button><input id='bgcolor' type='color' class='colorpicker' style='top:10px; left: -20px'/><br/></div><div style='height:5px'></div><br/>   <button class='buttonRC' style='width:105px; border-top-right-radius:0px; border-bottom-right-radius:0px;' onclick='FontFuture()'><big><b>Future</b></big></button><button class='buttonRC' style='width:106px; border-top-left-radius:0px; border-bottom-left-radius:0px; position:relative; right:1px;' onclick='FontClassic()'><big><b>Classic</b></big></button> <br/>  <br/><button class='buttonRC' style='width:210px' onclick='ThemeUpdate()'><big><b>Update</b></big></button><br/><br/><button class='buttonRC' style='width:210px' onclick='ThemeRestoreDefault()'><big><b>Restore Default</b></big></button>"
           document.getElementById("barcolor").value=themebarcolor
+          document.getElementById("bgcolor").value=themebgcolor
           document.getElementById("funrectangle").setAttribute("style","width: 300px; position: absolute; left: 40px; background-color: "+themebarcolor+";")
+          document.getElementById("body").setAttribute("style","background-color: "+themebgcolor+";")
+        }
+
+        function FontFuture(){
+          document.getElementById("stylesheet").setAttribute("href","style-avenir.css")
+          themefont = "avenir"
+          localStorage.setItem("themefont",themefont)
+          Clear()
+        }
+
+        function FontClassic(){
+          document.getElementById("stylesheet").setAttribute("href","style-georgia.css")
+          themefont = "georgia"
+          localStorage.setItem("themefont",themefont)
+          Clear()
         }
 
         function ThemeUpdate(){
           themebarcolor = document.getElementById("barcolor").value
+          themebgcolor = document.getElementById("bgcolor").value
           console.log(themebarcolor)
           localStorage.setItem("themebarcolor",themebarcolor)
           document.getElementById("funrectangle").setAttribute("style","width: 300px; position: absolute; left: 40px; background-color: "+themebarcolor+";")
-
+          localStorage.setItem("themebgcolor",themebgcolor)
+          document.getElementById("body").setAttribute("style","background-color: "+themebgcolor+";")
           Clear()
           scrollToTop()
          }
 
         function ThemeRestoreDefault(){
           themebarcolor = defaultthemebarcolor
+          themebgcolor = "#FFFFFF"
           ModTheme()
-          localStorage.setItem("themebarcolor",themebarcolor)
+          localStorage.setItem("themefont","avenir")
+          localStorage.setItem("themebarcolor",defaultthemebarcolor)
+          locatStorage.setItem("themebgcolor","#FFFFFF")
           Clear()
           scrollToTop()
         }
@@ -294,6 +233,15 @@
           localStorage.removeItem("customsubjects")
           localStorage.removeItem("customcolors")
           localStorage.removeItem("themebarcolor")
+          localStorage.removeItem("themebgcolor")
+          localStorage.removeItem("themefont")
+
+          localStorage.removeItem("dataId")
+          localStorage.removeItem("dataDate")
+          localStorage.removeItem("dateSubject")
+          localStorage.removeItem("dataContent")
+          localStorage.removeItem("dataTag")
+
           document.getElementById("content").innerHTML = ""
           alert("Planner has been reset")
         }
