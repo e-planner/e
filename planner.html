@@ -209,7 +209,7 @@
           thing.appendChild(newTag)
         }
 
-        document.addEventListener('contextmenu', event => event.preventDefault());
+        //document.addEventListener('contextmenu', event => event.preventDefault());
         function Pin(id){
           let date = document.getElementById(String(id)+"1");
           let tag = document.getElementById(String(id)+"2");
@@ -340,7 +340,7 @@
     <div style="position: absolute; left: 400px; width: 800px">
 
 
-      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0926.1250</u></small></p><br/>
+      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0930.1610</u></small></p><br/>
 
       <h1> Digital Planner </h1>
       <div id="tasks"></div>
@@ -354,7 +354,7 @@
         let storedItem2 = localStorage.getItem("idList");
 
         function PopInfo(){
-          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0930.1550\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 30, 2022\n> Date Last Modified: September 22, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
+          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0930.1610\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 30, 2022\n> Date Last Modified: September 22, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
           alert("========INSTRUCTIONS=======\n\nSIDE PANEL (LEFT)\n> Use the side panel to set attributes of a new task\n> Click \"ADD NEW TASK\" to add a new task\n> Click \"CLEAR FORM\" to erase your input in the purple bar\n> CLICK \"SETTINGS\" to customize or RESET the planner\nRIGHT\n> Click the date part of the task to PIN\n> Click the rest to DELETE or EDIT\n> Click the VERSION NUMBER to show info message\n\n========UPDATES=======\n> New classic font\n> Separate CSS stylesheet from the HTML\n> Customizable background color\n> Settings Page\n> Bug fixes\n\n")
         }
 
