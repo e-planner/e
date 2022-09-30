@@ -71,13 +71,34 @@ a, h3, h2, h1, h4, h5, h6, div, p, button, input{
   border-left-width: 0px;
   padding: 8px 15px;
   position: relative;
-  bottom: -5.5px;
+  bottom: 9.5px;
   height:60px;
   width:60px;
   text-align:center;
   font-weight: bold;
   font-size: 30px;
   cursor:pointer;
+}
+
+.calendarU{
+  font-variant-caps: all-small-caps;
+  width: 25px;
+  font-size: 18px;
+  text-align: center;
+  width: 30px;
+  position: relative;
+  bottom: 6px;
+  right: 2px;
+}
+
+.calendarD{
+  width: 50px;
+  font-size: 36px;
+  text-align-last: center;
+  position: relative;
+  bottom: 18px;
+  right: 12px;
+  height: 50px;
 }
 
 .buttonRC:hover{
@@ -153,4 +174,21 @@ a, h3, h2, h1, h4, h5, h6, div, p, button, input{
   padding-bottom: 10px;
   padding-left: 10px;
   width: 140px;
+}
+
+.tagBar
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: white;
+  border-color: black;
+  border-width: 1.2px;
+  height:25px;
+  text-align:center;
+  font-weight: bold;
+  position: relative;
+  left: -305px;
+  top: -63px;
 }

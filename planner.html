@@ -90,7 +90,7 @@
         let dataDate
         let dataId
 
-        const defaultsubjects = ['Science','Math','English','Chinese','Humanities','I&S','Design','Art','Drama','Music','Wushu','Dance','PE','Wellbeing']
+        const defaultsubjects = ['Science','Math','English','Chinese','World Civ','China Civ','Design','Art','Drama','Music','Wushu','Dance','PE','Wellbeing']
         const defaultcolors = ['CDF6C0','F5F8C3','F7B79B','C0CAF6','C0E9F6','C0E9F6','FAB4F6','F6C0C4','F6C0C4','F6C0C4','F6C0C4','F6C0C4','B8FFF8','CEDE40']
 
         function ClearForm(){
@@ -190,7 +190,16 @@
           } else{
             newTask.innerHTML = task + "&nbsp";
           }
-          newDate.innerHTML = day;
+
+          if (tempjumbodate=="22020000"){
+            newDate.innerHTML = "<div class='calendarU' style='color:white'>NAN</div><div class='calendarD' style='color:white'>0</div>"
+          } else {
+            weekdays = ["SUN","MON","TUE","WED","THU","FRI","SAT"]
+            monthslonglist = ["January","Febuary","March","April","May","June","July","August","September","October","November","December"]
+            const desigdate = new Date(monthslonglist[month-1]+' '+String(day)+', '+String(year)+' 00:00:00');
+            const desigweekdayidx = desigdate.getDay();
+            newDate.innerHTML = "<div class='calendarU'>"+String(weekdays[desigweekdayidx])+"</div><div class='calendarD'>"+String(day)+"</div>";
+          }
 
           //alert(idIndex);
 
@@ -200,7 +209,7 @@
           thing.appendChild(newTag)
         }
 
-        document.addEventListener('contextmenu', event => event.preventDefault());
+        //document.addEventListener('contextmenu', event => event.preventDefault());
         function Pin(id){
           let date = document.getElementById(String(id)+"1");
           let tag = document.getElementById(String(id)+"2");
@@ -331,7 +340,7 @@
     <div style="position: absolute; left: 400px; width: 800px">
 
 
-      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0922.2040</u></small></p><br/>
+      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0926.1250</u></small></p><br/>
 
       <h1> Digital Planner </h1>
       <div id="tasks"></div>
@@ -345,7 +354,7 @@
         let storedItem2 = localStorage.getItem("idList");
 
         function PopInfo(){
-          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0922.2040\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 22, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
+          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0930.1550\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 30, 2022\n> Date Last Modified: September 22, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
           alert("========INSTRUCTIONS=======\n\nSIDE PANEL (LEFT)\n> Use the side panel to set attributes of a new task\n> Click \"ADD NEW TASK\" to add a new task\n> Click \"CLEAR FORM\" to erase your input in the purple bar\n> CLICK \"SETTINGS\" to customize or RESET the planner\nRIGHT\n> Click the date part of the task to PIN\n> Click the rest to DELETE or EDIT\n> Click the VERSION NUMBER to show info message\n\n========UPDATES=======\n> New classic font\n> Separate CSS stylesheet from the HTML\n> Customizable background color\n> Settings Page\n> Bug fixes\n\n")
         }
 
