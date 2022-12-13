@@ -1,23 +1,27 @@
 @import "style.css";
 
 a, h3, h2, h1, h4, h5, h6, div, p, button, input{
-  font-family: georgia;
+  font-family: graphik;
+}
+
+b{
+  font-weight: 600;
 }
 
 .calendar{
-  bottom: 10px;
+  bottom: 8px;
 }
 
 .calendarU{
-  bottom: 6px;
+  bottom: 10px;
 }
 
 .calendarD{
-  bottom: 16px;
+  bottom: 22px;
 }
 
 .colorpickerT{
-  top:9px;
+  top:8px;
 }
 
 .colorpickerS{

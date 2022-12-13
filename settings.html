@@ -43,7 +43,7 @@
     <div style="position: absolute; left: 400px; width: 800px">
 
 
-      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0930.1610</u></small></p><br/>
+      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.1130.0945</u></small></p><br/>
 
       <h1> Settings</h1>
       <div id="content"></div>
@@ -52,8 +52,7 @@
 
         document.addEventListener('contextmenu', event => event.preventDefault());
         function PopInfo(){
-          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0930.1610\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 30, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
-          alert("========INSTRUCTIONS=======\n> Use the side panel to choose an attribute that you want to edit\n\n========UPDATES=======\n> None\n\n")
+          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.1130.0945\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 30, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
         }
 
         let themefont
@@ -79,7 +78,7 @@
           let thelist = document.createElement("div")
           thelist.id = "thelist"
           content.appendChild(thelist)
-          const subTemplate="<div id='thing∂iπ'><input id='subject∂iπ' placeholder='Subject Name' class='inputSC' maxlength='20'><input id='color∂iπ' type='color' class='colorpicker'/><button id='close∂iπ' onclick='SubClose(∂iπ)' class='buttonSubClose'>×</button><br/></div>"
+          const subTemplate="<div id='thing∂iπ'><input id='subject∂iπ' placeholder='Subject Name' class='inputSC' maxlength='12'><input id='color∂iπ' type='color' class='colorpickerS'/><button id='close∂iπ' onclick='SubClose(∂iπ)' class='buttonSubClose'>×</button><br/></div>"
 
           let combinedtemplate=""
           let newtemplate
@@ -152,16 +151,11 @@
           }
 
           if (localStorage.getItem("themefont") == null){
-            themefont = "georgia"
-            document.getElementById('stylesheet').setAttribute("href","style-georgia.css")
+            themefont = "graphik"
           } else {
             themefont = localStorage.getItem("themefont")
-            if (themefont == "avenir"){
-              document.getElementById('stylesheet').setAttribute("href","style-avenir.css")            
-            } else {
-              document.getElementById('stylesheet').setAttribute("href","style-georgia.css")
-            }
           }
+          document.getElementById('stylesheet').setAttribute("href","style-"+themefont+".css")
 
           if (localStorage.getItem("themebarcolor") == null){
             themebarcolor = defaultthemebarcolor
@@ -184,7 +178,7 @@
         }
 
         function ModTheme(){
-          content.innerHTML="<div id='barcolorthing'><button id='barcolorinput' class='buttonR' style='; width: 180px; text-align: left;'><big> Side Panel Color</big></button><input id='barcolor' type='color' class='colorpicker' style='top:10px; left: -20px'/><br/></div><div style='height:5px'></div>   <div id='bgcolorthing'><button id='bgcolorinput' class='buttonR' style='; width: 180px; text-align: left;'><big> Background Color</big></button><input id='bgcolor' type='color' class='colorpicker' style='top:10px; left: -20px'/><br/></div><div style='height:5px'></div><br/>   <button class='buttonRC' style='width:105px; border-top-right-radius:0px; border-bottom-right-radius:0px;' onclick='FontFuture()'><big><b>Future</b></big></button><button class='buttonRC' style='width:106px; border-top-left-radius:0px; border-bottom-left-radius:0px; position:relative; right:1px;' onclick='FontClassic()'><big><b>Classic</b></big></button> <br/>  <br/><button class='buttonRC' style='width:210px' onclick='ThemeUpdate()'><big><b>Update</b></big></button><br/><br/><button class='buttonRC' style='width:210px' onclick='ThemeRestoreDefault()'><big><b>Restore Default</b></big></button>"
+          content.innerHTML="<div id='barcolorthing'><button id='barcolorinput' class='buttonR' style='; width: 280px; text-align: left;'><big> Side Panel Color</big></button><input id='barcolor' type='color' class='colorpickerT'><br/></div><div style='height:5px'></div>   <div id='bgcolorthing'><button id='bgcolorinput' class='buttonR' style='; width: 280px; text-align: left;'><big> Background Color</big></button><input id='bgcolor' type='color' class='colorpickerT'/><br/></div><div style='height:5px'></div><br/>   <button class='buttonRC' style='width:100px; border-top-right-radius:0px; border-bottom-right-radius:0px;' onclick='FontFuture()'><big><b>Future</b></big></button>  <button class='buttonRC' style='width:100px; border-radius:0px; position:relative; right: 6px;' onclick='FontStandard()'><big><b>Standard</b></big></button>  <button class='buttonRC' style='width:100px; border-top-left-radius:0px; border-bottom-left-radius:0px; position:relative; right:12px;' onclick='FontClassic()'><big><b>Classic</b></big></button> <br/>  <br/><button class='buttonRC' style='width:300px' onclick='ThemeUpdate()'><big><b>Update</b></big></button><br/><br/><button class='buttonRC' style='width:300px' onclick='ThemeRestoreDefault()'><big><b>Restore Default</b></big></button>"
           document.getElementById("barcolor").value=themebarcolor
           document.getElementById("bgcolor").value=themebgcolor
           document.getElementById("funrectangle").setAttribute("style","width: 300px; position: absolute; left: 40px; background-color: "+themebarcolor+";")
@@ -194,6 +188,13 @@
         function FontFuture(){
           document.getElementById("stylesheet").setAttribute("href","style-avenir.css")
           themefont = "avenir"
+          localStorage.setItem("themefont",themefont)
+          Clear()
+        }
+
+        function FontStandard(){
+          document.getElementById("stylesheet").setAttribute("href","style-graphik.css")
+          themefont = "graphik"
           localStorage.setItem("themefont",themefont)
           Clear()
         }
@@ -223,7 +224,7 @@
           ModTheme()
           localStorage.setItem("themefont","avenir")
           localStorage.setItem("themebarcolor",defaultthemebarcolor)
-          locatStorage.setItem("themebgcolor","#FFFFFF")
+          localStorage.setItem("themebgcolor","#FFFFFF")
           Clear()
           scrollToTop()
         }
